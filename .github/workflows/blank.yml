@@ -1,7 +1,7 @@
 name: "File existence check"
 on:
-  push:
-    branches: [ Development ]
+  pull_request: 
+    branches: [ main ]
 jobs:
   file_existence:
     runs-on: ubuntu-latest
