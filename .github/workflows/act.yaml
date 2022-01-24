@@ -2,17 +2,12 @@ name: "File existence check"
 on:
   push:
     branches: [ Development ]
-  pull_request:
-    branches: [ Development ]
-
 jobs:
   file_existence:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
-      
-     
       
       - name: Check file existence
         id: check_files
@@ -22,10 +17,7 @@ jobs:
 
       - name: File exists
         if: steps.check_files.outputs.files_exists == 'true'
-         then
         # Only runs if all of the files exists
         run: echo All files exists!
-         else
-         echo "Files doesn't exist!"
-         fi
+        
         
