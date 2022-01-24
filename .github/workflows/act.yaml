@@ -12,22 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
       
-      - name: Send mail
-        uses: dawidd6/action-send-mail@v3
-        with:
-            server_address: smtp.gmail.com
-            # Required mail server port:
-            server_port: 465
-            # Optional (recommended): mail server username:
-            username: ${{secrets.MAIL_USERNAME}}
-            # Optional (recommended) mail server password:
-            password: ${{secrets.MAIL_PASSWORD}}
-            # Required mail subject:
-            subject: Github Actions job result
-            # Required recipients' addresses:
-            to: mirzamohammadhamza@hotmail.com
-            from: M Hamzi
-            secure: true
+     
       
       - name: Check file existence
         id: check_files
@@ -36,6 +21,12 @@ jobs:
           files: "Dockerfile,docker-compose.yml,container_name.txt"
 
       - name: File exists
-        if: steps.check_files.outputs.files_exists == 'true'
-        # Only runs if all of the files exists
-        run: echo All files exists!
+        run: |
+           if[ "steps.check_files.outputs.files_exists == 'true'" ]
+           then
+           # Only runs if all of the files exists
+           echo "All files exists!"
+           else
+           echo "Files Doesn't Exists!"
+           fi
+           
