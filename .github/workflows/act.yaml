@@ -21,12 +21,11 @@ jobs:
           files: "Dockerfile,docker-compose.yml,container_name.txt"
 
       - name: File exists
-        run: |
-           if[ "steps.check_files.outputs.files_exists == 'true'" ]
-           then
-           # Only runs if all of the files exists
-           echo "All files exists!"
-           else
-           echo "Files Doesn't Exists!"
-           fi
-           
+        if: steps.check_files.outputs.files_exists == 'true'
+         then
+        # Only runs if all of the files exists
+        run: echo All files exists!
+         else
+         echo "Files doesn't exist!"
+         fi
+        
