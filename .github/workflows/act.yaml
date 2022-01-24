@@ -26,6 +26,7 @@ jobs:
             subject: Github Actions job result
             # Required recipients' addresses:
             to: mirzamohammadhamza@hotmail.com
+            from: hamzim24@gmail.com
             secure: true
       
       - name: Check file existence
