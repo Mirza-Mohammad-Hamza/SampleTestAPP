@@ -11,9 +11,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v1
+      
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
-         with:
+        with:
             server_address: smtp.gmail.com
             # Required mail server port:
             server_port: 465
@@ -24,11 +25,10 @@ jobs:
             # Required mail subject:
             subject: Github Actions job result
             # Required recipients' addresses:
-            to: obiwan@example.com,yoda@example.com
+            to: mirzamohammadhamza@hotmail.com,
             # Required sender full name (address can be skipped):
-            from: Luke Skywalker # <user@example.com>
-            # Optional whether this connection use TLS (default is true if server_port is 465)
-            secure: true
+            from: Mirza Mohammad Hamza
+      
       - name: Check file existence
         id: check_files
         uses: andstor/file-existence-action@v1
