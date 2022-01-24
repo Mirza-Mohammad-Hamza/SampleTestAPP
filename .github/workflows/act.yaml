@@ -25,9 +25,7 @@ jobs:
             # Required mail subject:
             subject: Github Actions job result
             # Required recipients' addresses:
-            to: mirzamohammadhamza@hotmail.com,
-            # Required sender full name (address can be skipped):
-            from: Mirza Mohammad Hamza
+            to: mirzamohammadhamza@hotmail.com
             secure: true
       
       - name: Check file existence
