@@ -1,4 +1,4 @@
-name: Greeting on variable day
+name: Manual_Trigger
 on:
   workflow_dispatch
 env:
