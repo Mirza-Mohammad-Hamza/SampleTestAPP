@@ -1,8 +1,17 @@
 name: Manual_Trigger
 
 on:
-    workflow_dispatch
-
+    workflow_dispatch:
+       inputs:
+         loglevel:
+            description: 'LOG Level'
+            required: true
+            default: 'warning'
+         tags:
+             description: 'Test Sanarios Tags'
+             required: true
+             default: 'Tags'
+             
 jobs:
   build:
     runs-on: ubuntu-latest
