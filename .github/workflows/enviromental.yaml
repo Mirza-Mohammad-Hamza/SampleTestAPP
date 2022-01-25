@@ -2,7 +2,7 @@ name: Greeting on variable day
 
 on:
   push:
-      branches: [ workflow_dispatch ]
+    branches: Mirza-Mohammad-Hamza-patch-1
 
 env:
   DAY_OF_WEEK: Monday
