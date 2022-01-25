@@ -1,6 +1,8 @@
 name: Manual_Trigger
+
 on:
   workflow_dispatch
+
 env:
   DAY_OF_WEEK: Monday
 
